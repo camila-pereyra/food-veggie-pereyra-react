@@ -1,0 +1,25 @@
+.navBar-container{
+    background-color: white;
+    margin:0;
+    padding:  30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px #39B54A ;
+}
+.navBar-tittle{
+    margin: 0;
+    color: #39B54A;
+    font-size: 2rem;
+}
+.navBar-options{
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+.navBar-options li a{
+    margin-left: 18px;
+    color: #39B54A;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
