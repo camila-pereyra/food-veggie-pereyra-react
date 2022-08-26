@@ -1,25 +1,35 @@
 .navBar-container{
     background-color: white;
     margin:0;
-    padding:  30px 50px;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 2px #39B54A ;
+    border-bottom: solid 1px #c5cbc6;
 }
-.navBar-tittle{
-    margin: 0;
-    color: #39B54A;
-    font-size: 2rem;
+.navBar-logo{
+    width: 20%;
+}
+.navBar-logo img{
+    width: 50%;
 }
 .navBar-options{
+    width: 50%;
     margin: 0;
     display: flex;
+    justify-content: center;
     list-style: none;
 }
+.navBar-options li{
+    margin-right: 10px;
+    margin-left: 10px;
+}
 .navBar-options li a{
-    margin-left: 18px;
     color: #39B54A;
     font-size: 1.3rem;
+    font-weight: bolder;
     text-decoration: none;
+}
+.navBar-options li a:hover{
+    color: #009245;
 }
