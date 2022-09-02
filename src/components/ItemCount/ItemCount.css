@@ -1,0 +1,43 @@
+.container-item{
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px gray;
+    text-align: center;
+    margin: auto;
+}
+.container-item-stock{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.container-item-count{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-item-count button{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 3px 3px 10px gray;
+    font-size: 20px;
+}
+.container-item-count #button-sumar{
+    background-color:#39B54A;
+}
+.container-item-count #button-sumar:hover{
+    background-color:#009245;
+}
+.container-item-count #button-restar{
+    background-color:#b53939;
+}
+.container-item-count #button-restar:hover{
+    background-color:#920000;
+}
+.container-item-count p{
+    padding: 20px 20px 20px 20px;
+}
