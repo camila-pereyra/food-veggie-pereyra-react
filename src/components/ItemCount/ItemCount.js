@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AddCartButton from "../AddCartButton/AddCartButton";
 import "./ItemCount.css";
 
 const ItemCount = ({ stock }) => {
@@ -8,9 +7,9 @@ const ItemCount = ({ stock }) => {
   const restar = () => (items > 1 ? setItems(items - 1) : items);
 
   return (
-    <div className="container-item">
-      <p className="container-item-stock">Stock disponible: {stock}</p>
-      <div className="container-item-count">
+    <>
+      <p className="itemCount-stock">Stock disponible: {stock}</p>
+      <div className="itemCount-buttonContainer">
         <button id="button-restar" onClick={restar}>
           -
         </button>
@@ -19,8 +18,7 @@ const ItemCount = ({ stock }) => {
           +
         </button>
       </div>
-      <AddCartButton />
-    </div>
+    </>
   );
 };
 

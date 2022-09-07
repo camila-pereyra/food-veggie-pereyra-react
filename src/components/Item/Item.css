@@ -1,0 +1,26 @@
+.itemCard{
+    width: 400px;
+    margin: 15px;
+    border-radius:30px ;
+    box-shadow: 10px 10px 25px gray;
+    text-align: center;
+    text-transform: uppercase;
+}
+.itemCard-image{
+    width: 100%;
+}
+.itemCard-tittle{
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 10px; 
+
+}
+.itemCard-description{
+    font-size: 1rem;
+    padding-bottom: 10px; 
+
+}
+.itemCard-price{
+    font-weight: bolder;
+    font-size: 1.5rem;
+}

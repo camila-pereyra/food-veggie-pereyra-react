@@ -1,15 +1,19 @@
 .addCart-button{
-    width: 100%;
-    margin: 10px 0 10px 0;
+    width: 60%;
+    margin: 10px 0 20px 0;
     padding: 10px ;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bolder;
     text-transform: uppercase;
-    background-color: transparent;
+    background: linear-gradient(to top, rgb(0, 0, 0) , gray) ;
     border: none;
-    box-shadow: 3px 3px 5px gray;
-    border-radius: 15px;
+    color: white;
+    border-radius: 10px;
+    transition: all 1s;
+
 }
 .addCart-button:hover{
-    box-shadow: 3px 3px 5px black;
+    letter-spacing: 1.5px;
+    transition: all 1s;
 }
+
