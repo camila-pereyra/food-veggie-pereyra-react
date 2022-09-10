@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock }) => {
-  const [items, setItems] = useState(1);
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [items, setItems] = useState(initial);
   const sumar = () => (items < stock ? setItems(items + 1) : items);
   const restar = () => (items > 1 ? setItems(items - 1) : items);
-
+  const handleOnAdd = () => {
+    if (items <= stock) onAdd(items);
+  };
   return (
     <>
       <p className="itemCount-stock">Stock disponible: {stock}</p>
@@ -18,6 +20,9 @@ const ItemCount = ({ stock }) => {
           +
         </button>
       </div>
+      <button onClick={handleOnAdd} className="addCart-button">
+        Agregar al carrito
+      </button>
     </>
   );
 };
