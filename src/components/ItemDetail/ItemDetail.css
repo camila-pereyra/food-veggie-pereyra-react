@@ -1,0 +1,39 @@
+.itemDetail-container{
+    max-width: 95%;
+    margin: 40px auto;
+    box-shadow: 10px 10px 15px gray;
+}
+.itemDetail-img{
+    width: 100%;
+}
+.itemDetail-containerInfo{
+    padding: 20px ;
+    text-transform: uppercase;
+    text-align: center;
+}
+@media (min-width:992px) {
+    .itemDetail-container{
+        display: flex;
+        align-items: center;
+        margin: 40px auto;
+    }    
+    .itemDetail-img{
+        width: 50%;
+    }
+    .itemDetail-containerInfo{
+        width: 50%;
+    }
+}
+.itemDetail-containerInfo h3{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.itemDetail-containerInfo-description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.itemDetail-containerInfo-price{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
