@@ -1,10 +1,13 @@
-import cart from '../../images/cart.png';
-import './CartWidget.css'
+import { Link } from "react-router-dom";
+import cart from "../../images/cart.png";
+import "./CartWidget.css";
 
 const CartWidget = () => {
   return (
-    <a href="" className="cartWidget"><img src={cart} alt="carrito" /></a>
-  )
-}
+    <Link to={"/carrito"} className="cartWidget">
+      <img src={cart} alt="carrito" />
+    </Link>
+  );
+};
 
 export default CartWidget;

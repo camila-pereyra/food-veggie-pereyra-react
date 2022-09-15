@@ -19,6 +19,8 @@
 }
 .itemList-link{
     text-decoration: none;
-    color: black;
+    color: gray;
+    margin-top: 10px;
+    font-weight: lighter;
    
 }

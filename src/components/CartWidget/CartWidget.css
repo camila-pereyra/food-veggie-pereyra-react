@@ -1,8 +1,7 @@
 .cartWidget{
-    width: 20%;
+    width: 150px;
     text-align: end;
 }
-
 .cartWidget img{
     width: 40px;
 }

@@ -15,6 +15,13 @@ function App() {
             <ItemListContainer greeting={"Bienvenido/a a Food Veggie"} />
           }
         />
+        <Route
+          path="category/:categoryName"
+          element={
+            <ItemListContainer greeting={"Bienvenido/a a Food Veggie"} />
+          }
+        />
+
         <Route path="detail/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
