@@ -1,8 +1,12 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import Swal from "sweetalert2";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
+  const [isAdd, setIsAdd] = useState(false);
+
   const handleOnAdd = (cantidad) => {
     Swal.fire({
       position: "center",
@@ -11,7 +15,9 @@ const ItemDetail = ({ item }) => {
       showConfirmButton: false,
       timer: 1500,
     });
+    setIsAdd(true);
   };
+
   return (
     <div className="itemDetail-container">
       <img src={item.image} alt={item.tittle} className="itemDetail-img" />
@@ -21,7 +27,13 @@ const ItemDetail = ({ item }) => {
           {item.description}
         </p>
         <p className="itemDetail-containerInfo-price">${item.price}</p>
-        <ItemCount initial={1} stock={item.stock} onAdd={handleOnAdd} />
+        {isAdd === false ? (
+          <ItemCount initial={1} stock={item.stock} onAdd={handleOnAdd} />
+        ) : (
+          <Link to={"/carrito"} className="itemDetail-buttonCart">
+            Ver carrito
+          </Link>
+        )}
       </div>
     </div>
   );
