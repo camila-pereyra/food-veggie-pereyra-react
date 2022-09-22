@@ -2,11 +2,13 @@ import "./ItemCount.css";
 import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-  const [items, setItems] = useState(initial);
-  const sumar = () => (items < stock ? setItems(items + 1) : items);
-  const restar = () => (items > 1 ? setItems(items - 1) : items);
+  const [count, setCount] = useState(initial);
+  const sumar = () => (count < stock ? setCount(count + 1) : count);
+  const restar = () => (count > 1 ? setCount(count - 1) : count);
   const handleOnClick = () => {
-    if (items <= stock) onAdd(items);
+    if (count <= stock) {
+      onAdd(count);
+    }
   };
   return (
     <>
@@ -15,7 +17,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button id="button-restar" onClick={restar}>
           -
         </button>
-        <p> {items}</p>
+        <p> {count}</p>
         <button id="button-sumar" onClick={sumar}>
           +
         </button>
