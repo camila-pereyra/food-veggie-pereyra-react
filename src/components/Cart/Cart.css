@@ -1,0 +1,105 @@
+.cartContainer{
+    text-align: center;
+    padding: 20px;
+}
+.cartContainer h1{
+    color: #009245;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.cartContainer h3{
+    margin: 20px 0 30px 0;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.btnShowProducts{
+    text-decoration: none;
+    padding: 15px;
+    background-color: #000000;
+    margin:  20px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 30px;
+}
+.cartRow{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+.cartRow li{
+    font-weight: bolder;
+}
+.cartColumnImage{
+    width: 10%;
+}
+.cartColumnImage img{
+    width: 80%;
+} 
+
+.cartColumnTittle{
+    width: 20%;
+
+}
+.cartColumnDescription{
+    width: 20%;
+}
+.cartColumnPrice{
+    width: 10%;
+
+}
+.cartColumnQuantity{
+    width: 15%;
+
+}
+.cartColumnTotal{
+    width: 15%;
+}
+.cartColumnDelete{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.cartColumnDelete-button{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 17, 17);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+.cartColumnDelete-button:hover{
+    background-color: rgb(180, 15, 15);
+}
+.total{
+    text-transform: uppercase;
+    padding: 30px;
+    font-size: 20px;
+}
+.container-button button{
+    width: 20%;
+    margin: 0 20px;
+    padding: 10px ;
+    font-size: 13px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: linear-gradient(to top, rgb(0, 0, 0) , gray) ;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    transition: all 1s;  
+}
+.container-button button:hover{
+    letter-spacing: 1.5px;
+    transition: all 1s;
+}
+

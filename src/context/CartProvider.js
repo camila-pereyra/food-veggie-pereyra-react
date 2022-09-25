@@ -21,17 +21,15 @@ export const CartProvider = ({ children }) => {
     return cart.some((item) => item.id === id);
   };
   const removeItem = (id) => {
-    if (isInCart(id)) {
-      const newCart = cart.filter((producto) => producto.id !== id);
-      setCart(newCart);
-    }
+    const newCart = cart.filter((producto) => producto.id !== id);
+    setCart(newCart);
   };
   const clear = () => {
     setCart([]);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeItem, clear }}>
       {children}
     </CartContext.Provider>
   );

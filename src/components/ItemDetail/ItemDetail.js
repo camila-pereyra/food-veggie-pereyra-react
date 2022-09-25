@@ -33,8 +33,8 @@ const ItemDetail = ({ item }) => {
         {isAdd === false ? (
           <ItemCount initial={1} stock={item.stock} onAdd={handleOnAdd} />
         ) : (
-          <Link to={"/carrito"} className="itemDetail-buttonCart">
-            Ver carrito
+          <Link to={"/cart"} className="itemDetail-buttonCart">
+            Ir al carrito
           </Link>
         )}
       </div>

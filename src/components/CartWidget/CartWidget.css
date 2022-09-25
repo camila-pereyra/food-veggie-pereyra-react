@@ -1,7 +1,23 @@
 .cartWidget{
     width: 150px;
     text-align: end;
+    position: relative;
+
 }
 .cartWidget img{
     width: 40px;
+}
+.cartCount{
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background-color: rgb(221, 17, 17);
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius:100% ;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bolder;
 }
