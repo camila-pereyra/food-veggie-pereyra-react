@@ -4,9 +4,7 @@ import Swal from "sweetalert2";
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  useEffect(() => {}, [cart]);
 
   const addToCart = (item, quantity) => {
     isInCart(item.id)

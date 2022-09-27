@@ -1,36 +1,37 @@
 import "./ItemListContainer.css";
-import data from "../../data/data";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
   const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 2000);
-  });
-
-  useEffect(() => {
-    setIsLoading(true);
-    getProducts
-      .then((response) => {
+  const getProducts = () => {
+    const db = getFirestore();
+    const querySnapshot = collection(db, "items");
+    getDocs(querySnapshot)
+      .then((resp) => {
+        const data = resp.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
         if (categoryName === undefined) {
-          setProducts(response);
+          setProducts(data);
         } else {
           setProducts(
-            response.filter((product) => product.category === categoryName)
+            data.filter((product) => product.category === categoryName)
           );
         }
       })
       .catch((error) => console.log(error))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .finally(() => setIsLoading(false));
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => getProducts(), 2000);
   }, [categoryName]);
 
   if (isLoading) {

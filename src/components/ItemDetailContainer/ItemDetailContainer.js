@@ -1,4 +1,4 @@
-import data from "../../data/data";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
@@ -9,20 +9,22 @@ const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState([]);
 
-  const getItem = new Promise((resolve, reject) =>
-    setTimeout(() => {
-      resolve(data);
-    }, 2000)
-  );
-
-  useEffect(() => {
-    setIsLoading(true);
-    getItem
-      .then((response) => {
-        setItem(response.find((item) => item.id === parseInt(id)));
+  const getItems = () => {
+    const db = getFirestore();
+    const queryDoc = doc(db, "items", id);
+    getDoc(queryDoc)
+      .then((resp) => {
+        setItem({ id: id, ...resp.data() });
       })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      getItems();
+    }, 2000);
   }, [id]);
 
   if (isLoading) {
