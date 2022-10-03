@@ -1,37 +1,76 @@
-.navBar-container{
-    background-color: white;
-    margin:0;
-    padding: 10px 20px;
+.navContainer{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 1px #c5cbc6;
+    z-index: 999;
+    background-color: white;
 }
-.navBar-logo{
+.navContainer-logo{
+    width: 20%;
+    text-align: start;
+}
+.navContainer-logo img{
     width: 150px;
 }
-.navBar-logo img{
-    width: 100%;
+.navContainer-links{
+    width: 50%;
+    text-align: center;
 }
-.navBar-options{
-    margin: 0;
+.navContainer-links a{
+  font-size: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #009245;
+}
+.navContainer-links a:hover{
+  color: #006d33;
+}
+.navContainer-links.active{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.navContainer-links.active a{
+  margin: 30px;
+  font-size: 25px;
+}
+.navContainer-cart{
+    width: 20%;
     display: flex;
-    justify-content: center;
-    list-style: none;
+    justify-content: end;
+    align-items: center;
 }
-.navBar-options li{
-    margin-right: 10px;
-    margin-left: 10px;
+.navContainer-hamburMenu{
+    width: 50px;
+    z-index: 101;
 }
-.navBar-optionsEnlace{
-    color: #39B54A;
-    font-size: 1.3rem;
-    font-weight: bolder;
-    text-decoration: none;
+@media (min-width:768px){
+  .navContainer-hamburMenu{
+    display: none;
+  }
 }
-.navBar-optionsEnlaceActivo{
-    font-size: 1.3rem;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #009245;    
+@media (max-width:768px) {
+  .navContainer-logo{
+    display: none;
+  }
+  .navContainer-links{
+    display: none;
+  }
+  .navContainer-cart{
+    justify-content: start;
+  }
 }

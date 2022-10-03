@@ -2,22 +2,47 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "./Cart.css";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 const Cart = () => {
-  const { cart, removeItem, clear } = useContext(CartContext);
+  const { cart, removeItem, clear, calculateTotal } = useContext(CartContext);
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    calculateTotal();
-  }, [cart]);
-
-  const calculateTotal = () => {
-    let subtotal = 0;
-    cart.forEach((element) => {
-      subtotal = subtotal + element.price * element.quantity;
-    });
-    setTotal(subtotal);
+  const creeateOrder = () => {
+    const db = getFirestore();
+    const order = {
+      buyer: {
+        user: "Camila",
+        phone: "123456",
+        email: "camila@test.com",
+      },
+      items: cart,
+      total: cart.reduce(
+        (valorPasado, valorActual) =>
+          valorPasado + valorActual.price * valorActual.quantity,
+        0
+      ),
+    };
+    const query = collection(db, "orders");
+    addDoc(query, order)
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Campra realizada con éxito",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(() =>
+        alert("No se pudo realizar su compra. Vuelve a intentarlo mas tarde")
+      );
   };
+
+  useEffect(() => {
+    setTotal(calculateTotal());
+  }, [cart]);
 
   return cart.length !== 0 ? (
     <div className="cartContainer">
@@ -54,7 +79,7 @@ const Cart = () => {
       <h3 className="total">Total: ${total}</h3>
       <div className="container-button">
         <button onClick={() => clear()}>Vaciar carrito</button>
-        <button>Finalizar compra</button>
+        <button onClick={creeateOrder}>Comprar</button>
       </div>
     </div>
   ) : (

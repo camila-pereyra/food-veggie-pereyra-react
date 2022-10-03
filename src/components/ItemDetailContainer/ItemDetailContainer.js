@@ -22,9 +22,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    setTimeout(() => {
-      getItems();
-    }, 2000);
+    getItems();
   }, [id]);
 
   if (isLoading) {

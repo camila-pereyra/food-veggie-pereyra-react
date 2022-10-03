@@ -1,0 +1,9 @@
+.carrousel-container{
+    width: 100%;
+}
+.carrousel-container img{
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    object-position: 50% 50%
+}

@@ -67,7 +67,7 @@
 .cartColumnDelete-button{
     width: 30px;
     height: 30px;
-    padding: 5px;
+    padding: 5px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,4 +102,25 @@
     letter-spacing: 1.5px;
     transition: all 1s;
 }
-
+@media (max-width:768px){
+    .cartColumnImage{
+        display: none;
+    }
+    .cartColumnDescription{
+        display: none;
+    }
+    .cartColumnPrice{
+        width: 20%;
+    }
+    .cartColumnQuantity{
+        width: 20%;
+    }
+    .cartColumnTotal{
+        width: 30%;
+    }
+    .cartColumnDelete{
+        width: 20%;
+        display: flex;
+        justify-content: center 
+    }
+}

@@ -1,23 +1,28 @@
 .cartWidget{
-    width: 150px;
+    width: 40px;
+    margin: 0;
+    padding: 0;
     text-align: end;
     position: relative;
 
 }
-.cartWidget img{
-    width: 40px;
+.cartWidget a img{
+    width: 100%;
 }
 .cartCount{
     position: absolute;
     right: -8px;
-    top: -8px;
-    background-color: rgb(221, 17, 17);
+    top: -7px;
+    background-color: rgb(0, 0, 0);
     color: white;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     text-align: center;
     border-radius:100% ;
     padding: 3px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

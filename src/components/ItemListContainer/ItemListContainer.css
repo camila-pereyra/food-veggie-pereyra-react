@@ -1,10 +1,11 @@
 .itemListContainer-tittle{
     padding-top: 30px;
     padding-bottom: 30px;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bolder;
     color:  #009245;
     text-align: center;
+    text-transform: uppercase;
 }
 .loading-container {
     position: fixed;
