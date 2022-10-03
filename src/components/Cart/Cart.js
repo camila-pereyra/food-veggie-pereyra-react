@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Cart.css";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const Cart = () => {
   const { cart, removeItem, clear, calculateTotal } = useContext(CartContext);
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate();
 
   const creeateOrder = () => {
     const db = getFirestore();
@@ -26,14 +27,18 @@ const Cart = () => {
     };
     const query = collection(db, "orders");
     addDoc(query, order)
-      .then(() => {
+      .then((resp) => {
         Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Campra realizada con éxito",
-          showConfirmButton: false,
-          timer: 1500,
+          title: `Compra realizada con éxito. Su numero de orden es ${resp.id}`,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
         });
+        clear();
+        navigate("/");
       })
       .catch(() =>
         alert("No se pudo realizar su compra. Vuelve a intentarlo mas tarde")
