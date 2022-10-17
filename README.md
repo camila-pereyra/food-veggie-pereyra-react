@@ -34,6 +34,8 @@ Este proyecto está desarrollado en ReactJS y es el final del curso de ReactJS d
 Está desarrollado con ReactJs y es un sitio web que representa un Ecommerce de comida vegetariana/vegana. Está conectado a la base de datos [Firebase](https://firebase.google.com/), por ende los productos son cargados desde allí y cuando un usuario finaliza la compra, se genera una orden de compra que llega a la base de datos y se actualiza el stock en la base de datos y en el sitio web. La idea es que el usuario pueda navegar por el sitio libremente por el sitio, ver el detalle del producto deseado y agregarlo al carrito de compras. A su vez, si es que lo desea, puede filtrar por categorías y se mostrarán sólo los productos de la categoría seleccionada. Una vez agregados, puede ir al carrito, eliminar items, vaciarlo o bien generar la orden y finalizar la compra.
 
 <br>
+<a href="https://github.com/camila-pereyra/food-veggie-pereyra-react/"><img src="src/images/GIF-FoodDVeggie.gif" alt="GIF Food Veggie" width="100%"></a>
+<br>
 
 ## Como usarlo
 Para clonar y ejecutar esta aplicación, necesitará [Git](https://git-scm.com) y[Node.js](https://nodejs.org/en/download/) (que viene con [npm](http://npmjs.com)) instalados en su computadora. Desde su línea de comando:
