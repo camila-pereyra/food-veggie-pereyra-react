@@ -3,13 +3,14 @@ import logo from "../../images/logo.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link, useLocation } from "react-router-dom";
 import BurguerBotton from "../BurguerBotton/BurguerBotton";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 const NavBar = () => {
   const [clicked, setClicked] = useState(false);
   const location = useLocation();
+  const { cart } = useContext(CartContext);
   const handleClick = () => {
-    //cuando esta true lo pasa a false y vice versa
+    //cuando esta true lo pasa a false y viceversa
     setClicked(!clicked);
   };
   const screenSizes = (e) => {
@@ -51,9 +52,12 @@ const NavBar = () => {
           Otros
         </Link>
       </div>
-      <div className="navContainer-cart">
-        <CartWidget />
-      </div>
+      {cart.length > 0 && (
+        <div className="navContainer-cart">
+          <CartWidget />
+        </div>
+      )}
+
       <div className="navContainer-hamburMenu">
         <BurguerBotton clicked={clicked} handleClick={handleClick} />
       </div>

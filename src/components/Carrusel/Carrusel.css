@@ -7,3 +7,9 @@
     object-fit: cover;
     object-position: 50% 50%
 }
+.carrousel-container h3{
+    font-size: 38px;
+    font-weight: 800;
+    color: rgb(255, 255, 255) ;
+    text-transform: uppercase;
+    }

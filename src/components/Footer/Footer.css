@@ -1,0 +1,49 @@
+footer{
+    background-color: white;
+    margin-top: auto;
+    padding: 30px 10px;
+    box-shadow: -5px 0 15px gray;
+}
+.contacto{
+    text-align: center;
+}
+.contacto h4{
+    margin-bottom: 10px;
+}
+.contacto svg{
+    margin: 0 20px;
+    color: black;
+    padding: 20px;
+}
+#ig:hover{
+    background-color: #D62976;
+    color: white;
+    border-radius: 30px;
+}
+#github:hover{
+    background-color:#1d1a1a;
+    color: white;
+    border-radius: 30px;
+}
+#linkedin:hover{
+    background-color:#0e76a8;
+    color: white;
+    border-radius: 30px;
+}
+.page{
+    margin-top: 15px;
+    text-align: center;
+}
+@media (min-width:768px) {
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .page{
+        margin-top: 0;
+        text-align: end;
+    }
+    
+    
+}

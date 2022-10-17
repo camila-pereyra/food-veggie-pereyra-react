@@ -33,11 +33,11 @@
     border: none;
     color: white;
     border-radius: 10px;
-    transition: all 1s;
+    transition: all 500ms ease;
 
 }
 .addCart-button:hover{
     letter-spacing: 1.5px;
-    transition: all 1s;
+    transition: all 500ms ease;
 }
 
