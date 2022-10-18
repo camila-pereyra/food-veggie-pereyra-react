@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import logo from "../../images/logo.png";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import BurguerBotton from "../BurguerBotton/BurguerBotton";
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
@@ -36,21 +36,36 @@ const NavBar = () => {
       </div>
 
       <div className={`navContainer-links ${clicked ? "active" : ""}`}>
-        <Link className="navContainer-link" to="/">
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
+        >
           Inicio
-        </Link>
-        <Link className="navContainer-link" to="/category/milanesas">
+        </NavLink>
+        <NavLink
+          to="/category/milanesas"
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
+        >
           Milanesas
-        </Link>
-        <Link className="navContainer-link" to="/category/tartas">
+        </NavLink>
+        <NavLink
+          to="/category/tartas"
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
+        >
           Tartas
-        </Link>
-        <Link className="navContainer-link" to="/category/hamburguesas">
+        </NavLink>
+        <NavLink
+          to="/category/hamburguesas"
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
+        >
           Hamburgesas
-        </Link>
-        <Link className="navContainer-link" to="/category/otros">
+        </NavLink>
+        <NavLink
+          to="/category/otros"
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
+        >
           Otros
-        </Link>
+        </NavLink>
       </div>
       {cart.length > 0 && (
         <div className="navContainer-cart">
@@ -66,3 +81,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
