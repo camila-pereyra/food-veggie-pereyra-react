@@ -17,22 +17,26 @@
 .navContainer-logo img{
     width: 150px;
 }
-.navContainer-links{
-    text-align: center;
+.link{
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    color: #009244;
+    margin: 0 10px;
+    text-decoration: none;
 }
-.navContainer-links a{
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0 10px;
-  text-decoration: none;
-  color: #009244;
-  padding: 5px 0;
-  
-}
-.navContainer-links a:hover{
+.link:hover, .link-active:hover{
   color: #046632;
-  
+}
+.link-active{
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin: 0 10px;
+  color: #046632;
+  font-weight: 800;
+  text-decoration: none;
+
 }
 .navContainer-links.active{
   width: 100%;
@@ -47,7 +51,8 @@
   align-items: center;
   z-index: 100;
 }
-.navContainer-links.active a{
+.navContainer-links.active .link,
+.navContainer-links.active .link-active{
   margin: 30px;
   font-size: 25px;
 }
